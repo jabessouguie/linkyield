@@ -47,3 +47,12 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 ## Phase 10 : Automation et Reporting (PM & UX)
 - [x] Générateur de rapports PDF/Email "Marque Blanche".
 - [x] Système de planification d'exports automatiques.
+
+## Phase 11 : Gouvernance et Légal (LEGAL & DATA)
+- [ ] Audit Log d'accès aux données PII.
+- [ ] Routine de suppression automatique (Droit à l'oubli).
+- [ ] Consent Manager (Simulé).
+
+## Phase 12 : Intelligence Prédictive (DATA_ANALYST)
+- [ ] Détection d'anomalies (Chutes de portées inhabituelles).
+- [ ] Prédiction de la performance d'un post (Scoring pré-publication).
