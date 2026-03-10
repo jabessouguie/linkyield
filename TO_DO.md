@@ -19,9 +19,9 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 - [x] Détection automatique des contenus viraux (+200%).
 
 ## Phase 4 : Audience et Segmentation (Fonctionnalité 2)
-- [ ] Module d'anonymisation des PII.
-- [ ] Ingestion des statistiques firmographiques (Secteur, Taille, etc.).
-- [ ] Calcul de la croissance nette d'abonnés.
+- [x] Module d'anonymisation des PII.
+- [x] Ingestion des statistiques firmographiques (Secteur, Taille, etc.).
+- [x] Calcul de la croissance nette d'abonnés.
 
 ## Phase 5 : Benchmarking (Fonctionnalité 3)
 - [ ] Tracking des pages concurrentes (Social Listening).

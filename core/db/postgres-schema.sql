@@ -25,3 +25,13 @@ CREATE TABLE IF NOT EXISTS oauth_tokens (
     expires_at TIMESTAMP WITH TIME ZONE NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Stockage des segments d'audience agrégés (Firmographie)
+CREATE TABLE IF NOT EXISTS audience_segments (
+    id SERIAL PRIMARY KEY,
+    linkedin_account_id INTEGER REFERENCES linkedin_accounts(id) ON DELETE CASCADE,
+    segment_type VARCHAR(50) NOT NULL,    -- 'industry', 'company_size', 'seniority'
+    segment_value VARCHAR(255) NOT NULL,
+    follower_count INTEGER NOT NULL,
+    last_updated TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
