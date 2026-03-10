@@ -66,8 +66,9 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 - [x] Lead Scoring basé sur l'engagement LinkedIn.
 
 ## Phase 15 : Social Listening Sectoriel (DATA_ANALYST)
-- [/] Analyse de sentiment sur les marchés cibles.
-- [ ] Pipeline de veille sur les thématiques Trending.
+- [x] Analyse de sentiment sur les marchés cibles.
+- [x] Pipeline de veille sur les thématiques Trending.
 
 ## Phase 16 : Dashboard Hybride (Personal Branding vs Corporate)
-- [ ] Unification des métriques RH / Dirigeants / Pages.
+- [/] Unification des métriques RH / Dirigeants / Pages.
+- [ ] Algorithme de synergie de marque (Cross-Promotion).
