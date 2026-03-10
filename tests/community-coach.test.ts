@@ -1,10 +1,13 @@
 import { CommunityCoachAgent, SocialInteraction } from '../src/api/ai/community-coach-agent';
+import { GeminiService } from '../src/core/ai/gemini-service';
 
 describe('Community Coach Agent (Phase 26)', () => {
     let coach: CommunityCoachAgent;
+    let gemini: GeminiService;
 
     beforeEach(() => {
-        coach = new CommunityCoachAgent();
+        gemini = new GeminiService('fake_key');
+        coach = new CommunityCoachAgent(gemini);
     });
 
     it('devrait suggérer une réponse alignée sur le branding', async () => {

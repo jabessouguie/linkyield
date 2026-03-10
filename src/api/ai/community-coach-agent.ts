@@ -5,6 +5,8 @@
  * @author Synapse B2B - Prompt Engineering & CS
  */
 
+import { GeminiService } from '../../core/ai/gemini-service';
+
 export type SentimentTone = 'supportive' | 'skeptical' | 'inquisitive' | 'irrelevant';
 
 export interface SocialInteraction {
@@ -24,6 +26,12 @@ export interface CoachSuggestion {
  * @description Analyse les commentaires et suggère des réponses optimales basées sur le contexte utilisateur.
  */
 export class CommunityCoachAgent {
+    private gemini: GeminiService;
+
+    constructor(gemini: GeminiService) {
+        this.gemini = gemini;
+    }
+
     /**
      * @method analyzeAndSuggest
      * @description Évalue un commentaire et propose une réponse calée sur le ton de la marque.
