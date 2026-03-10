@@ -24,8 +24,8 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 - [x] Calcul de la croissance nette d'abonnés.
 
 ## Phase 5 : Benchmarking (Fonctionnalité 3)
-- [ ] Tracking des pages concurrentes (Social Listening).
-- [ ] Calcul de la Part de Voix (Share of Voice).
+- [x] Tracking des pages concurrentes (Social Listening).
+- [x] Calcul de la Part de Voix (Share of Voice).
 
 ## Phase 6 : Interface et Visualisation (UX & Mobile)
 - [ ] Dashboard Principal (Heatmaps, Bubble Charts).
