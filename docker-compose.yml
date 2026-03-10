@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: synapse-clickhouse
+    ports:
+      - "8123:8123" # HTTP
+      - "9000:9000" # Native
+    environment:
+      - CLICKHOUSE_USER=synapse
+      - CLICKHOUSE_PASSWORD=synapse_dev_pass
+      - CLICKHOUSE_DB=synapse_analytics
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./core/db/clickhouse-schema.sql:/docker-entrypoint-initdb.d/init.sql
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: synapse-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=synapse
+      - POSTGRES_PASSWORD=synapse_dev_pass
+      - POSTGRES_DB=synapse_relational
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./core/db/postgres-schema.sql:/docker-entrypoint-initdb.d/init.sql
+
+  redis:
+    image: redis:7-alpine
+    container_name: synapse-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  clickhouse_data:
+  postgres_data:
+  redis_data:
