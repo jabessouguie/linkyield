@@ -5,7 +5,7 @@
  * @author Synapse B2B - Backend
  */
 
-import { LeakyBucket } from '../../core/limiter/leaky-bucket.ts';
+import { LeakyBucket } from '../../core/limiter/leaky-bucket';
 
 /**
  * @interface LinkedInConfig

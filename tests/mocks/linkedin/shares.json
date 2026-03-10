@@ -1,0 +1,45 @@
+{
+    "elements": [
+        {
+            "organizationalEntity": "urn:li:organization:123456",
+            "share": "urn:li:share:7891011",
+            "shareStatistics": {
+                "shareCount": 15,
+                "engagement": 0.045,
+                "clickCount": 120,
+                "likeCount": 45,
+                "uniqueImpressionsCount": 2500,
+                "commentCount": 12
+            }
+        },
+        {
+            "organizationalEntity": "urn:li:organization:123456",
+            "share": "urn:li:share:7891012",
+            "shareStatistics": {
+                "shareCount": 2,
+                "engagement": 0.012,
+                "clickCount": 34,
+                "likeCount": 15,
+                "uniqueImpressionsCount": 800,
+                "commentCount": 1
+            }
+        },
+        {
+            "organizationalEntity": "urn:li:organization:123456",
+            "share": "urn:li:share:7891013",
+            "shareStatistics": {
+                "shareCount": 45,
+                "engagement": 0.089,
+                "clickCount": 450,
+                "likeCount": 189,
+                "uniqueImpressionsCount": 15000,
+                "commentCount": 67
+            }
+        }
+    ],
+    "paging": {
+        "count": 10,
+        "start": 0,
+        "links": []
+    }
+}
