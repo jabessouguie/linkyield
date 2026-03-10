@@ -9,14 +9,14 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 - [x] Créer le connecteur API de base avec gestion du header `Linkedin-Version`.
 
 ## Phase 2 : Collecte et Ingestion (Data Engineer)
-- [ ] Créer les schémas ClickHouse pour l'analyse de performance.
-- [ ] Développer le module d'ingestion des posts (Feed).
-- [ ] Implémenter les mocks d'API dans `tests/mocks/linkedin/`.
+- [x] Créer les schémas ClickHouse pour l'analyse de performance.
+- [x] Développer le module d'ingestion des posts (Feed).
+- [x] Implémenter les mocks d'API dans `tests/mocks/linkedin/`.
 
 ## Phase 3 : Analyse de Performance (Fonctionnalité 1)
-- [ ] Calcul du Score de Résonance (Pondération interactions).
-- [ ] Calcul du Taux d'Engagement ($ER$).
-- [ ] Détection automatique des contenus viraux (+200%).
+- [x] Calcul du Score de Résonance (Pondération interactions).
+- [x] Calcul du Taux d'Engagement ($ER$).
+- [x] Détection automatique des contenus viraux (+200%).
 
 ## Phase 4 : Audience et Segmentation (Fonctionnalité 2)
 - [ ] Module d'anonymisation des PII.
