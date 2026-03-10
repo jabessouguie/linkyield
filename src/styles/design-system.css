@@ -1,0 +1,60 @@
+/**
+ * @file design-system.css
+ * @description Core Design System pour Synapse B2B - Dark Mode First.
+ * @version 1.0.0
+ * @author Synapse B2B - UX/UI
+ */
+
+:root {
+    /* Palette Primaire - LinkedIn Blue Base */
+    --synapse-blue: #0A66C2;
+    --synapse-blue-dark: #004182;
+
+    /* Sémantique Performance (Guidelines UX) */
+    --synapse-success: #057642;
+    /* Vert Croissance */
+    --synapse-danger: #D11124;
+    /* Rouge Baisse */
+    --synapse-warning: #EBB100;
+
+    /* Mode Sombre (Dark Mode First) */
+    --bg-primary: #0F111A;
+    --bg-secondary: #1A1D2B;
+    --bg-accent: #24283B;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+
+    /* Typographie */
+    --font-main: 'Noto Sans', 'Inter', sans-serif;
+
+    /* Spécifications UI */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--bg-accent);
+}
+
+.metric-up {
+    color: var(--synapse-success);
+}
+
+.metric-down {
+    color: var(--synapse-danger);
+}
