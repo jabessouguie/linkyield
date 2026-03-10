@@ -28,5 +28,5 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 - [x] Calcul de la Part de Voix (Share of Voice).
 
 ## Phase 6 : Interface et Visualisation (UX & Mobile)
-- [ ] Dashboard Principal (Heatmaps, Bubble Charts).
-- [ ] Application Mobile (iOS/Android).
+- [x] Dashboard Principal (Heatmaps, Bubble Charts).
+- [x] Application Mobile (iOS/Android) - (Layout Responsive).
