@@ -42,3 +42,19 @@ CREATE TABLE IF NOT EXISTS synapse_analytics.competitor_metrics (
 ) ENGINE = MergeTree()
 ORDER BY (competitor_urn, published_date)
 SETTINGS index_granularity = 8192;
+
+-- Table pour l'attribution de revenus et le ROI (Données calculées)
+CREATE TABLE IF NOT EXISTS synapse_analytics.revenue_attribution (
+    account_urn String,
+    period_start DateTime,
+    period_end DateTime,
+    
+    total_engagements UInt32,
+    estimated_revenue_value Float64,
+    allocated_budget Float64,
+    roi_percentage Float32,
+    
+    calculated_at DateTime DEFAULT now()
+) ENGINE = MergeTree()
+ORDER BY (account_urn, period_start)
+SETTINGS index_granularity = 8192;
