@@ -40,10 +40,10 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 - [x] Traitement asynchrone des Webhooks LinkedIn.
 
 ## Phase 9 : Revenus et ROI (CFO & BIZ_DEV)
-- [ ] Calcul de l'Attribution de Revenu (ROI estimé).
-- [ ] Pipeline d'ingestion des MQLs/SQLs (Simulé).
-- [ ] Dashboard financier (Cout par Engagement - CPE).
+- [x] Calcul de l'Attribution de Revenu (ROI estimé).
+- [x] Pipeline d'ingestion des MQLs/SQLs (Simulé).
+- [x] Dashboard financier (Cout par Engagement - CPE).
 
 ## Phase 10 : Automation et Reporting (PM & UX)
-- [ ] Générateur de rapports PDF/Email "Marque Blanche".
-- [ ] Système de planification d'exports automatiques.
+- [x] Générateur de rapports PDF/Email "Marque Blanche".
+- [x] Système de planification d'exports automatiques.

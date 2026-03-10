@@ -112,7 +112,7 @@ function App() {
           </div>
           <div className="header-actions">
             <button className="icon-btn"><Bell size={20} /></button>
-            <button className="btn-primary">Export Report</button>
+            <button className="btn-primary" onClick={() => alert('Génération du rapport Marque Blanche en cours...')}>Export Report</button>
           </div>
         </header>
 
