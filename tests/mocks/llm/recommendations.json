@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        {
+            "recommendation": "Mock Recommendation",
+            "rationale": "Mock Rationale",
+            "impact": "medium"
+        }
+    ]
+}

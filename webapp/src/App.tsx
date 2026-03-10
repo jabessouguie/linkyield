@@ -11,7 +11,8 @@ import {
   LogOut,
   Bell,
   Search,
-  ChevronDown
+  ChevronDown,
+  Sparkles
 } from 'lucide-react';
 import {
   AreaChart,
@@ -120,6 +121,21 @@ function App() {
           <StatCard title="Impressions" value="1.2M" change="+21%" icon={TrendingUp} color="110, 122, 255" />
           <StatCard title="Followers" value="18,450" change="+8.1%" icon={Users} color="0, 242, 254" />
           <StatCard title="Engagement Rate" value="5.7%" change="+2.4%" icon={MessageSquare} color="255, 0, 128" />
+        </section>
+
+        {/* IA Insights Section */}
+        <section className="glass-container ai-insights-section">
+          <div className="ai-header">
+            <Sparkles className="sparkle-icon" size={24} />
+            <h3 className="gradient-text">Synapse AI : Recommandations Stratégiques</h3>
+          </div>
+          <div className="ai-content">
+            <div className="ai-insight-card">
+              <p className="ai-recommendation">"Dupliquez le format carrousel utilisé mardi dernier."</p>
+              <p className="ai-rationale">Ce post a généré un resonance_score 3.2x supérieur à votre moyenne habituelle dans le secteur IT.</p>
+              <span className="ai-impact high">Impact : Élevé</span>
+            </div>
+          </div>
         </section>
 
         <section className="charts-grid">

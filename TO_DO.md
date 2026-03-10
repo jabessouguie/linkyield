@@ -30,3 +30,11 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 ## Phase 6 : Interface et Visualisation (UX & Mobile)
 - [x] Dashboard Principal (Heatmaps, Bubble Charts).
 - [x] Application Mobile (iOS/Android) - (Layout Responsive).
+
+## Phase 7 : Intelligence IA (Fonctionnalité 4)
+- [x] Moteur de recommandation stratégique (`InsightGenerator`).
+- [x] Templates de prompts personnalisés par secteur d'activité.
+
+## Phase 8 : Résilience (Backend Avancé)
+- [x] Gestionnaire de cache Redis (`core/cache/`).
+- [x] Traitement asynchrone des Webhooks LinkedIn.
