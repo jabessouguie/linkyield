@@ -62,11 +62,12 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 - [x] Système d'invitation et rôles d'équipe (Admin, Analyst, Viewer).
 
 ## Phase 14 : Intégration CRM (BIZ_DEV)
-- [/] Synchronisation vers HubSpot/Salesforce.
-- [ ] Lead Scoring basé sur l'engagement LinkedIn.
+- [x] Synchronisation vers HubSpot/Salesforce.
+- [x] Lead Scoring basé sur l'engagement LinkedIn.
 
 ## Phase 15 : Social Listening Sectoriel (DATA_ANALYST)
-- [ ] Analyse de sentiment sur les marchés cibles.
+- [/] Analyse de sentiment sur les marchés cibles.
+- [ ] Pipeline de veille sur les thématiques Trending.
 
 ## Phase 16 : Dashboard Hybride (Personal Branding vs Corporate)
 - [ ] Unification des métriques RH / Dirigeants / Pages.
