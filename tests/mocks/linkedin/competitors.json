@@ -1,0 +1,18 @@
+[
+    {
+        "competitor_urn": "urn:li:organization:comp_1",
+        "metrics": {
+            "likes": 500,
+            "comments": 50,
+            "shares": 20
+        }
+    },
+    {
+        "competitor_urn": "urn:li:organization:comp_2",
+        "metrics": {
+            "likes": 200,
+            "comments": 10,
+            "shares": 5
+        }
+    }
+]

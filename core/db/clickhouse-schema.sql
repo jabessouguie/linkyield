@@ -27,3 +27,18 @@ CREATE TABLE IF NOT EXISTS synapse_analytics.post_metrics (
 PARTITION BY toYYYYMM(published_date)
 ORDER BY (account_urn, published_date, post_urn)
 SETTINGS index_granularity = 8192;
+
+-- Table pour le benchmarking concurrentiel (Données publiques uniquement)
+CREATE TABLE IF NOT EXISTS synapse_analytics.competitor_metrics (
+    competitor_urn String,               -- ID de la page concurrente
+    post_urn String,                     -- ID du post concurrent
+    published_date DateTime,
+    
+    likes UInt32,
+    comments UInt32,
+    shares UInt32,
+    
+    ingested_at DateTime DEFAULT now()
+) ENGINE = MergeTree()
+ORDER BY (competitor_urn, published_date)
+SETTINGS index_granularity = 8192;
