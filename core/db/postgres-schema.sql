@@ -7,10 +7,28 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Table des Workspaces pour la multi-ténance
+CREATE TABLE IF NOT EXISTS workspaces (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    plan_tier VARCHAR(50) DEFAULT 'basic', -- basic, pro, agency
+    owner_id INTEGER REFERENCES users(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table de liaison Utilisateurs - Workspaces (Rôles)
+CREATE TABLE IF NOT EXISTS workspace_members (
+    workspace_id UUID REFERENCES workspaces(id),
+    user_id INTEGER REFERENCES users(id),
+    role VARCHAR(50) DEFAULT 'viewer', -- owner, admin, editor, viewer
+    joined_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (workspace_id, user_id)
+);
+
 -- Gestion des comptes connectés (Pages / Profils LinkedIn)
 CREATE TABLE IF NOT EXISTS linkedin_accounts (
     id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    workspace_id UUID REFERENCES workspaces(id) ON DELETE CASCADE,
     account_urn VARCHAR(255) UNIQUE NOT NULL,    -- Identifiant LinkedIn (ex: urn:li:organization:1234)
     account_type VARCHAR(50) NOT NULL,           -- 'profile' ou 'organization'
     account_name VARCHAR(255) NOT NULL,

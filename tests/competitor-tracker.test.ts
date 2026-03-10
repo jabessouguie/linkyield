@@ -4,8 +4,8 @@ describe('CompetitorTracker', () => {
     it('devrait calculer correctement la Part de Voix (Share of Voice)', () => {
         const myEngagements = 400;
         const competitors: CompetitorStats[] = [
-            { competitorUrn: 'urn:li:organization:comp_A', totalPublicEngagements: 400 }, // Total = 400 + 400 + 200 = 1000
-            { competitorUrn: 'urn:li:organization:comp_B', totalPublicEngagements: 200 }
+            { workspaceId: 'WS_TEST', competitorUrn: 'urn:li:organization:comp_A', totalPublicEngagements: 400 }, // Total = 400 + 400 + 200 = 1000
+            { workspaceId: 'WS_TEST', competitorUrn: 'urn:li:organization:comp_B', totalPublicEngagements: 200 }
         ];
 
         const result = CompetitorTracker.calculateShareOfVoice(myEngagements, competitors);

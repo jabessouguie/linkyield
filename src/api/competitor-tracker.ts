@@ -8,6 +8,7 @@
 import { LinkedInConnector } from './linkedin-connector';
 
 export interface CompetitorStats {
+    workspaceId: string;
     competitorUrn: string;
     totalPublicEngagements: number;
 }
@@ -51,10 +52,11 @@ export class CompetitorTracker {
      * @method fetchCompetitorEngagements
      * @description Récupère les métriques publiques (simulé via API).
      */
-    public async fetchCompetitorEngagements(competitorUrns: string[]): Promise<CompetitorStats[]> {
+    public async fetchCompetitorEngagements(competitorUrns: string[], workspaceId: string): Promise<CompetitorStats[]> {
         // En 2025, LinkedIn restreint l'accès aux pages tiers via l'API "Company Intelligence"
         // Nous simulons ici la récupération agrégée.
         return competitorUrns.map(urn => ({
+            workspaceId,
             competitorUrn: urn,
             totalPublicEngagements: Math.floor(Math.random() * 1000)
         }));

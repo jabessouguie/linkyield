@@ -3,6 +3,7 @@ CREATE DATABASE IF NOT EXISTS synapse_analytics;
 
 -- Table optimisée pour les requêtes analytiques massives sur les performances des posts (MergeTree)
 CREATE TABLE IF NOT EXISTS synapse_analytics.post_metrics (
+    workspace_id UUID,
     post_urn String,                     -- ID Unique du post LinkedIn
     account_urn String,                  -- ID du créateur ou de la page
     post_type String,                    -- Type de contenu (video, document, image, text)
@@ -25,11 +26,12 @@ CREATE TABLE IF NOT EXISTS synapse_analytics.post_metrics (
     ingested_at DateTime DEFAULT now()
 ) ENGINE = MergeTree()
 PARTITION BY toYYYYMM(published_date)
-ORDER BY (account_urn, published_date, post_urn)
+ORDER BY (workspace_id, account_urn, published_date, post_urn)
 SETTINGS index_granularity = 8192;
 
 -- Table pour le benchmarking concurrentiel (Données publiques uniquement)
 CREATE TABLE IF NOT EXISTS synapse_analytics.competitor_metrics (
+    workspace_id UUID,
     competitor_urn String,               -- ID de la page concurrente
     post_urn String,                     -- ID du post concurrent
     published_date DateTime,
@@ -40,11 +42,12 @@ CREATE TABLE IF NOT EXISTS synapse_analytics.competitor_metrics (
     
     ingested_at DateTime DEFAULT now()
 ) ENGINE = MergeTree()
-ORDER BY (competitor_urn, published_date)
+ORDER BY (workspace_id, competitor_urn, published_date)
 SETTINGS index_granularity = 8192;
 
 -- Table pour l'attribution de revenus et le ROI (Données calculées)
 CREATE TABLE IF NOT EXISTS synapse_analytics.revenue_attribution (
+    workspace_id UUID,
     account_urn String,
     period_start DateTime,
     period_end DateTime,
@@ -56,5 +59,5 @@ CREATE TABLE IF NOT EXISTS synapse_analytics.revenue_attribution (
     
     calculated_at DateTime DEFAULT now()
 ) ENGINE = MergeTree()
-ORDER BY (account_urn, period_start)
+ORDER BY (workspace_id, account_urn, period_start)
 SETTINGS index_granularity = 8192;

@@ -34,6 +34,7 @@ export interface LinkedInShareResponse {
 
 // Type de sortie (Aligné avec le schéma ClickHouse post_metrics)
 export interface ClickHousePostMetric {
+    workspace_id: string;
     post_urn: string;
     account_urn: string;
     post_type: string;
@@ -62,9 +63,10 @@ export class FeedIngester {
      * @method fetchAndTransform
      * @description Récupère les métriques depuis LinkedIn et les transforme.
      * @param {string} organizationUrn - L'URN de l'organisation LinkedIn
+     * @param {string} workspaceId - L'ID de l'espace de travail pour l'isolation des données
      * @returns {Promise<ClickHousePostMetric[]>}
      */
-    public async fetchAndTransform(organizationUrn: string): Promise<ClickHousePostMetric[]> {
+    public async fetchAndTransform(organizationUrn: string, workspaceId: string): Promise<ClickHousePostMetric[]> {
         // Encodage de l'URN obligatoire pour l'API LinkedIn
         const encodedUrn = encodeURIComponent(organizationUrn);
         const endpoint = `/organizationalEntityShareStatistics?q=organizationalEntity&organizationalEntity=${encodedUrn}`;
@@ -88,6 +90,7 @@ export class FeedIngester {
                 const analysis = PerformanceAnalyser.analyze(raw);
 
                 return {
+                    workspace_id: workspaceId,
                     post_urn: element.share,
                     account_urn: element.organizationalEntity,
                     post_type: 'unknown',

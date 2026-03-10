@@ -30,7 +30,7 @@ describe('FeedIngester', () => {
         mockConnector.fetch.mockResolvedValue(mockJson);
 
         const organizationUrn = 'urn:li:organization:123456';
-        const metrics: ClickHousePostMetric[] = await ingester.fetchAndTransform(organizationUrn);
+        const metrics: ClickHousePostMetric[] = await ingester.fetchAndTransform(organizationUrn, 'WS_TEST_456');
 
         // Assertions de base
         expect(metrics).toBeDefined();
@@ -55,6 +55,6 @@ describe('FeedIngester', () => {
         const testError = new Error("API Limit Reached");
         mockConnector.fetch.mockRejectedValue(testError);
 
-        await expect(ingester.fetchAndTransform('urn:li:organization:error')).rejects.toThrow("API Limit Reached");
+        await expect(ingester.fetchAndTransform('urn:li:organization:error', 'WS_ERROR')).rejects.toThrow("API Limit Reached");
     });
 });

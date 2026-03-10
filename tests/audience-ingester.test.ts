@@ -38,7 +38,7 @@ describe('AudienceIngester & Anonymizer', () => {
         mockConnector.fetch.mockResolvedValue(mockJson);
 
         const organizationUrn = 'urn:li:organization:123456';
-        const stats: AudienceStats = await ingester.fetchAudienceMetadata(organizationUrn);
+        const stats: AudienceStats = await ingester.fetchAudienceMetadata(organizationUrn, 'WS_TEST_123');
 
         expect(stats.organizationUrn).toBe(organizationUrn);
         expect(stats.totalFollowers).toBeGreaterThan(0);

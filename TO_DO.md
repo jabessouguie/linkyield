@@ -49,10 +49,24 @@ Ce document suit les spécifications du rapport d'analyse systémique et les dir
 - [x] Système de planification d'exports automatiques.
 
 ## Phase 11 : Gouvernance et Légal (LEGAL & DATA)
-- [ ] Audit Log d'accès aux données PII.
-- [ ] Routine de suppression automatique (Droit à l'oubli).
-- [ ] Consent Manager (Simulé).
+- [x] Audit Log d'accès aux données PII.
+- [x] Routine de suppression automatique (Droit à l'oubli).
+- [x] Consent Manager (Simulé).
 
 ## Phase 12 : Intelligence Prédictive (DATA_ANALYST)
-- [ ] Détection d'anomalies (Chutes de portées inhabituelles).
-- [ ] Prédiction de la performance d'un post (Scoring pré-publication).
+- [x] Détection d'anomalies (Chutes de portées inhabituelles).
+- [x] Prédiction de la performance d'un post (Scoring pré-publication).
+
+## Phase 13 : Multi-Ténance & SaaS Scaling (CFO / PO)
+- [x] Isolation des données par Workspace ID (SQL & OLAP).
+- [x] Système d'invitation et rôles d'équipe (Admin, Analyst, Viewer).
+
+## Phase 14 : Intégration CRM (BIZ_DEV)
+- [/] Synchronisation vers HubSpot/Salesforce.
+- [ ] Lead Scoring basé sur l'engagement LinkedIn.
+
+## Phase 15 : Social Listening Sectoriel (DATA_ANALYST)
+- [ ] Analyse de sentiment sur les marchés cibles.
+
+## Phase 16 : Dashboard Hybride (Personal Branding vs Corporate)
+- [ ] Unification des métriques RH / Dirigeants / Pages.

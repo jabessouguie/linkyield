@@ -6,6 +6,7 @@
  */
 
 export interface PerformanceSnapshot {
+    workspaceId: string;
     topPostUrn: string;
     averageResonance: number;
     viralContentDetect: boolean;

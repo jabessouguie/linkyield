@@ -14,6 +14,7 @@ export interface FirmographicSegment {
 
 export interface AudienceStats {
     organizationUrn: string;
+    workspaceId: string;
     totalFollowers: number;
     netGrowth: number;
     segments: {
@@ -34,7 +35,7 @@ export class AudienceIngester {
      * @method fetchAudienceMetadata
      * @description Récupère et agrège les données d'audience pour un compte.
      */
-    public async fetchAudienceMetadata(organizationUrn: string): Promise<AudienceStats> {
+    public async fetchAudienceMetadata(organizationUrn: string, workspaceId: string): Promise<AudienceStats> {
         const encodedUrn = encodeURIComponent(organizationUrn);
         const endpoint = `/organizationalEntityFollowerStatistics?q=organizationalEntity&organizationalEntity=${encodedUrn}`;
 
@@ -50,6 +51,7 @@ export class AudienceIngester {
 
             return {
                 organizationUrn,
+                workspaceId,
                 totalFollowers: total,
                 netGrowth: netGrowth,
                 segments: {

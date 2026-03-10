@@ -5,7 +5,7 @@
  * @author Synapse B2B - Infrastructure
  */
 
-import { RedisManager } from '../core/cache/redis-manager';
+import { RedisManager } from '../../core/cache/redis-manager';
 
 export interface LinkedInWebhookEvent {
     type: 'ugc_created' | 'organizational_change' | 'security_alert';
@@ -35,8 +35,11 @@ export class WebhookHandler {
             case 'ugc_created':
                 // Nouveau post détecté : on invalide le cache des métriques pour forcer un refresh
                 const accountUrn = event.payload.accountUrn;
-                await this.cache.invalidate(`metrics_${accountUrn}`);
-                console.log(`[Webhook] Cache invalidé pour ${accountUrn}`);
+                // En production, on chercherait le workspaceId en base via l'accountUrn
+                const workspaceId = "WS_RESOLVED_FROM_DB";
+
+                await this.cache.invalidate(`metrics_${workspaceId}_${accountUrn}`);
+                console.log(`[Webhook] Cache invalidé pour ${accountUrn} dans le workspace ${workspaceId}`);
                 break;
 
             case 'security_alert':
